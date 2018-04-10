@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我们的大脑是如何工作的我们的大脑,并没有神经网络那样有序的结构,但是依然表现出了非凡的性能.神经网络存在着许多问题,比如:  1.神经网络的神经元之间的权重,但是大脑的神经元主要的工作并不是在神经元之间连接的路上完成的.而是神经元本身完成了某些功能 2.我们的大脑随时会有新的神经元产生,而神经网络的结构一般是比较固定,即使有一些可以自适应改变结构的神经元,其训练成本也非常高昂.我们的大脑,无时无刻">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/neural_network_is_wrong.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我们的大脑是如何工作的我们的大脑,并没有神经网络那样有序的结构,但是依然表现出了非凡的性能.神经网络存在着许多问题,比如:  1.神经网络的神经元之间的权重,但是大脑的神经元主要的工作并不是在神经元之间连接的路上完成的.而是神经元本身完成了某些功能 2.我们的大脑随时会有新的神经元产生,而神经网络的结构一般是比较固定,即使有一些可以自适应改变结构的神经元,其训练成本也非常高昂.我们的大脑,无时无刻">
+<meta property="og:updated_time" content="2018-04-08T09:23:00.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="我们的大脑是如何工作的我们的大脑,并没有神经网络那样有序的结构,但是依然表现出了非凡的性能.神经网络存在着许多问题,比如:  1.神经网络的神经元之间的权重,但是大脑的神经元主要的工作并不是在神经元之间连接的路上完成的.而是神经元本身完成了某些功能 2.我们的大脑随时会有新的神经元产生,而神经网络的结构一般是比较固定,即使有一些可以自适应改变结构的神经元,其训练成本也非常高昂.我们的大脑,无时无刻">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/neural_network_is_wrong.html"/>
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="我们的大脑是如何工作的"><a href="#我们的大脑是如何工作的" class="headerlink" title="我们的大脑是如何工作的"></a>我们的大脑是如何工作的</h2><p>我们的大脑,并没有神经网络那样有序的结构,但是依然表现出了非凡的性能.神经网络存在着许多问题,比如:</p>
+<ul>
+<li>1.神经网络的神经元之间的权重,但是大脑的神经元主要的工作并不是在神经元之间连接的路上完成的.而是神经元本身完成了某些功能</li>
+<li>2.我们的大脑随时会有新的神经元产生,而神经网络的结构一般是比较固定,即使有一些可以自适应改变结构的神经元,其训练成本也非常高昂.我们的大脑,无时无刻都有着神经细胞的死亡和产生.</li>
+<li>3.那么我们的思想,是如何产生的呢?我们并不像神经网络一样,神经的终端有一个输出,可以输出我们想要的结果,我们的大脑并没有这样的结构,相反我们的大脑,充满了神经细胞,无数的神经细胞,构成了我们的思想和意识,让我们具有了思考,辨别甚至是想象,创造的能力,</li>
+<li>4.我们的大脑,并没有sigmoid,relu这样的非线性函数,至于像cnn的卷基层,池化层,那就更是天方夜谭了,这么复杂的结构,会使大脑结构变得异常复杂,同时处理通用问题的能力,会无比低下.</li>
+</ul>
+<h2 id="我们的感官"><a href="#我们的感官" class="headerlink" title="我们的感官"></a>我们的感官</h2><ul>
+<li>我们的感官,也是各种各样的神经元,接收到刺激,便兴奋起来,传递到大脑,引起大脑神经元的兴奋,从而引起反应,更深的会引起我们的辨识,思考,想象.我们的大脑,在没有接收到刺激,即外界的输入的时候,也具备想象的能力.</li>
+<li>不同的神经元,可以接受不同的刺激,眼睛内部的神经细胞,或许会接收到光线的波长(颜色),亮度,或者更简单,仅仅只是区分是否接收到刺激而已,数十亿个视神经细胞的共同作用,给我们的大脑创造了图像,皮肤上的神经细胞,则给了我们感觉.神经元是仅仅有激活和未激活的状态,还是有着更多更复杂的状态,这个需要确定.</li>
+</ul>
+<h2 id="一个大胆的想象"><a href="#一个大胆的想象" class="headerlink" title="一个大胆的想象"></a>一个大胆的想象</h2><p>我们可以识别不同位置,不同形状,甚至是旋转,颠倒的物体,那么我们是怎么看到东西的,我们的眼睛并没有计算机那么挑剔,不管看到的图像的像素是多少的,我们的眼睛,有着自己的像素(几亿?).我猜我们的视神经细胞,无时无刻不在为我们工作,他们每一个在每一个时刻,都由于接收这不同的刺激而产生着不同的反应,更多的视神经细胞,可以产生更精细的图像,刚出生的婴儿看到的东西是很模糊的,因为视神经细胞的数量并不够,能够接收的刺激也比较少,所以或许婴儿的眼睛分辨率,比成人低很多很多,同时非常相似的,婴儿的大脑发育不完全,那么如何定义这个不完全,应该是大脑的神经细胞的数量和质量都不如成人的大脑,所以能够提供的能力也比较差,这也是为什么婴儿大脑比较单纯,相对于成人来说,也比较笨,而天才,就是在儿童时期,大脑得到了充分发育的人.</p>
+<h2 id="一个大胆的理论"><a href="#一个大胆的理论" class="headerlink" title="一个大胆的理论"></a>一个大胆的理论</h2><p>外界产生的刺激,经过感受神经元后,传递进我们的大脑中,由大脑的哦神经元来处理,那么,我们的大脑是怎么处理这些信息的,大脑的神经元应该是一个三维网状的结构,为了简化,我们可以看成是二维的,相邻的神经元互相连接.传递进入大脑的信号,最终会导致大脑某些神经元产生兴奋,而某些会保持抑制(0与1)的状态,我们的大脑,对于一只狗来说,会有一个所有神经元兴奋抑制对应的模式.将狗的模式与大脑的当前模式进行一个非疑惑处理,那么状态相同的会得到1,不相同的会得到0.将结果取求和,和/总神经元数目=看到的东西是一只狗的概率</p>
+<p>上述的这个模式,可以解决一个问题,我们的想象是怎么来的,即使我们没有接受到输入,那么我们的大脑,也可以产生图像,也可以产生脑海里的声音,也可以想象疼痛的感觉,我的想法是我们的大脑神经元,可以自己有意识地或者无意识的产生某一种兴奋抑制的模式,同时我们会把它与我们学习过的模式进行对比,或许相似度只有百分之五十,但是!模糊的想象就这么诞生了.</p>
+<h2 id="如何用计算机实现这样的大脑"><a href="#如何用计算机实现这样的大脑" class="headerlink" title="如何用计算机实现这样的大脑"></a>如何用计算机实现这样的大脑</h2><p>首先我不知道,如果这个实现了,我们的世界会变成什么样,会将我们的世界按照我的理想那样,文明向前走了一步,还是导致了世界的毁灭</p>
+<p>训练步骤实例:判断一个张照片是不是一只狗,训练数据集为狗的图片</p>
+<ul>
+<li>1.所有内部神经元初始化为0</li>
+<li>2.狗狗的模式为全部为0</li>
+<li>3.输入地一张狗的图片,引起了输入层神经元的反应,传入到内部神经元,产生了某种模式,狗狗的模式 = 狗狗的模式 + 当前模式</li>
+<li>4.继续传入图片,重复3</li>
+<li>5.最终得到的结果,结果除以输入图片的数目,神经元状态小于0.5的取0,大于0.5的取1.得到狗的神经元模式</li>
+</ul>
+<p>测试</p>
+<p>将图片传入内部神经元,获取产生的模式,与狗的模式进行非异或处理,结果求和/总神经元数目 = 输入是一只狗的图片</p>
+<p>ps:</p>
+<ul>
+<li>1.大脑的神经元数量,大约860亿个,但是如果我们不需要实现非常复杂,非常通用的智能(强人工智能),或许我们并不需要这么多的神经元数量,越简单的问题需要的神经元数量越少.比如上述识别狗的功能,或许只需要几百万个神经元就够了,正向传播仅仅需要o(n)的复杂度.这个操作还是很容易实现的.同时不同的功能对神经元也可以进行分块处理,增加处理速度,比如图像和声音.</li>
+</ul>
+<h2 id="必须要解决的问题"><a href="#必须要解决的问题" class="headerlink" title="必须要解决的问题"></a>必须要解决的问题</h2><ul>
+<li>于是我们产生了一个新的问题,内部神经元的状态是如何传播的,如何由不同的输入产生不同的状态,让相同标签和数据,能够产生比较类似的状态,而这个状态产生的过程又必须比较简单而不是很复杂.如何定义神经元来实现这个,是必须要解决的问题</li>
+</ul>
+<h2 id="实现的一些杂乱的想法"><a href="#实现的一些杂乱的想法" class="headerlink" title="实现的一些杂乱的想法"></a>实现的一些杂乱的想法</h2><ul>
+<li>我们的机器大脑,不具备任何的先验知识,那么产生的第一个模式,就是非常重要的,所以学习的第一步,会产生一个非常重要的模式,最终的结果,可能受到这个模式的影响非常大(更可能关系不大),</li>
+<li>如何解决过拟合问题,增加各种各样的数据集?</li>
+<li>人类大脑的发育过程中,儿童时期的大脑神经元数量是最多的,随着年龄增长,一些不用的神经元会被剪掉,最终形成了一个比较简单,但是比较高效的神经网络.所以在训练的第一步,我们先要定义一个相对比较大的网络,然后在训练过程中,逐渐去掉无用的节点,</li>
+<li>大脑的皮层面积是比较大的,大脑的主要工作也在皮层完成,同时不同的区域会负责不同的功能.</li>
+<li>最终出现的神经网络,仅有部分由基因决定.大脑的许多部分,轴突最初”过度生长”,然后被依赖于神经活动的机制修剪.</li>
+<li>例如.在成人的结构包含一个非常精确的映射，连接的表面上的每个点视网膜到中脑层的相应点。在发育的第一阶段，来自视网膜的每个轴突通过化学线索被引导到中脑右侧的总体附近，但是然后非常丰富地分支并且与大量中脑神经元初步接触。出生前的视网膜包含特殊的机制，使它产生活动波，这些活动波在随机点自发产生，然后在视网膜层慢慢传播。这些波是有用的，因为它们会使相邻的神经元同时处于活动状态; 也就是说，它们会产生一个包含有关神经元空间排列信息的神经活动模式。这些信息在中脑被一种导致突触减弱并最终消失的机制所利用，如果轴突中的活性没有跟随目标细胞的活性。这一复杂过程的结果是逐渐调整和收紧地图，最终使其成为精确的成人形式。</li>
+<li>神经递质不仅仅有兴奋,也有抑制状态.</li>
+<li>锥状体:600万到700万,颜色灵敏,每个锥状体都连接到一个神经末端.杆状体:7500万到15000万,分布面积大,几个杆状体连接到一个神经末端,感知亮度</li>
+</ul>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的大脑是如何工作的"><span class="nav-number">1.</span> <span class="nav-text">我们的大脑是如何工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的感官"><span class="nav-number">2.</span> <span class="nav-text">我们的感官</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个大胆的想象"><span class="nav-number">3.</span> <span class="nav-text">一个大胆的想象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个大胆的理论"><span class="nav-number">4.</span> <span class="nav-text">一个大胆的理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何用计算机实现这样的大脑"><span class="nav-number">5.</span> <span class="nav-text">如何用计算机实现这样的大脑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必须要解决的问题"><span class="nav-number">6.</span> <span class="nav-text">必须要解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现的一些杂乱的想法"><span class="nav-number">7.</span> <span class="nav-text">实现的一些杂乱的想法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

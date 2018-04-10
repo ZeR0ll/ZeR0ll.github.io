@@ -79,12 +79,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="基本使用tensorflow  使用graph来表示计算任务 在session的上下文(context)中执行图 使用tensor表示数据 通过Variable维护状态 使用feed和fetch可以为任意的操作（arbitrary operation)赋值或者从里面获取数据  综述TensorFlow 是一个编程系统, 使用图来表示计算任务. 图中的节点被称之为 op (operation 的缩写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensorflow基础">
+<meta property="og:url" content="http://yoursite.com/2018/03/29/tensorflow基础/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本使用tensorflow  使用graph来表示计算任务 在session的上下文(context)中执行图 使用tensor表示数据 通过Variable维护状态 使用feed和fetch可以为任意的操作（arbitrary operation)赋值或者从里面获取数据  综述TensorFlow 是一个编程系统, 使用图来表示计算任务. 图中的节点被称之为 op (operation 的缩写">
+<meta property="og:updated_time" content="2018-03-29T15:44:20.848Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="tensorflow基础">
+<meta name="twitter:description" content="基本使用tensorflow  使用graph来表示计算任务 在session的上下文(context)中执行图 使用tensor表示数据 通过Variable维护状态 使用feed和fetch可以为任意的操作（arbitrary operation)赋值或者从里面获取数据  综述TensorFlow 是一个编程系统, 使用图来表示计算任务. 图中的节点被称之为 op (operation 的缩写">
 
 
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/29/tensorflow基础/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>tensorflow基础 | Hexo</title>
   
 
 
@@ -139,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,129 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/29/tensorflow流程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/29/tensorflow流程/" itemprop="url">tensorflow流程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-29T22:40:56+08:00">
-                2018-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.导入或者生成数据集<br>2.数据归一化和其他处理<br>3.数据集划分:训练集,测试集,交叉验证集<br>4.设定超参数<br>5.初始化variables 和 placeholder<br>6.定义模型结构<br>7.定义loss function<br>8.初始化和训练模型<br>9.模型评估<br>10.调整超参数<br>11.在测试集上测试</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -365,9 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/29/tensorflow基础/" itemprop="url">tensorflow基础</a></h1>
+          <h1 class="post-title" itemprop="name headline">tensorflow基础</h1>
         
 
         <div class="post-meta">
@@ -417,9 +298,7 @@
       
 
       
-        
-          
-            <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>tensorflow</p>
+        <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>tensorflow</p>
 <ul>
 <li>使用graph来表示计算任务</li>
 <li>在session的上下文(context)中执行图</li>
@@ -439,8 +318,6 @@
 <h2 id="Feed"><a href="#Feed" class="headerlink" title="Feed"></a>Feed</h2><p>上述示例在计算图中引入了 tensor, 以常量或变量的形式存储. TensorFlow 还提供了 feed 机制, 该机制 可以临时替代图中的任意操作中的 tensor 可以对图中任何操作提交补丁, 直接插入一个 tensor.</p>
 <p>feed 使用一个 tensor 值临时替换一个操作的输出结果. 你可以提供 feed 数据作为 run() 调用的参数. feed 只在调用它的方法内有效, 方法结束, feed 就会消失. 最常见的用例是将某些特殊的操作指定为 “feed” 操作, 标记的方法是使用 tf.placeholder() 为这些操作创建占位符.</p>
 
-          
-        
       
     </div>
     
@@ -457,158 +334,32 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/28/test/" itemprop="url">Unbenannt</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T19:50:15+08:00">
-                2018-03-28
-              </time>
+              <a href="/2018/03/28/test/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2018/03/29/tensorflow流程/" rel="prev" title="tensorflow流程">
+                tensorflow流程 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="A-first-Level-Header"><a href="#A-first-Level-Header" class="headerlink" title="A first Level Header"></a>A first Level Header</h1><h2 id="A-second-level-Header"><a href="#A-second-level-Header" class="headerlink" title="A second level Header"></a>A second level Header</h2><p>Now is the time for all good men to come to the aid of their country,This is just a regular paragraph.</p>
-<p>the quick brown fox jumpd over the lazy dog’s back.</p>
-<h3 id="Header-3"><a href="#Header-3" class="headerlink" title="Header 3"></a>Header 3</h3><blockquote>
-<p>This is block quote</p>
-<p>This is the second paragraph in the blockquote</p>
-<h2 id="this-is-an-H2-in-a-blockquote"><a href="#this-is-an-H2-in-a-blockquote" class="headerlink" title="this is an H2 in a blockquote"></a>this is an H2 in a blockquote</h2></blockquote>
-<p>Some of the words are <em>emphasized</em>.<br>some of these words <em>are emphasized also</em>.<br>use two asterisks for <strong>strong emphasis</strong>.<br>or if you prefer,<strong>use to underscores instead</strong>.</p>
-<ul>
-<li>candy</li>
-<li>gum</li>
-<li>booze</li>
-</ul>
-<ul>
-<li>candy</li>
-<li>gm</li>
-<li>wwbooze</li>
-</ul>
-<ul>
-<li>candy</li>
-<li>gaum</li>
-<li>booze</li>
-</ul>
-<ol>
-<li>red</li>
-<li>blue</li>
-<li>green</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -618,249 +369,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/基于神经网络的情感分析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/28/基于神经网络的情感分析/" itemprop="url">基于神经网络的情感分析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T19:49:19+08:00">
-                2018-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h2 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h2><h2 id="映射到向量"><a href="#映射到向量" class="headerlink" title="映射到向量"></a>映射到向量</h2><h3 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h3><h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><h2 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h2><h2 id="测试集"><a href="#测试集" class="headerlink" title="测试集"></a>测试集</h2>
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/Welcome/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/26/Welcome/" itemprop="url">Welcome</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T18:16:57+08:00">
-                2018-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>谢谢您访问我的博客，大学四年学习到了很多，开源社区也给予了我许多帮助，但是一直没能为开源做点贡献，现在开通这个博客，希望以后能够写一些干货。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -868,6 +381,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -888,8 +405,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -931,6 +457,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#综述"><span class="nav-number">2.</span> <span class="nav-text">综述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算图"><span class="nav-number">3.</span> <span class="nav-text">计算图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构建图"><span class="nav-number">3.1.</span> <span class="nav-text">构建图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动图"><span class="nav-number">3.2.</span> <span class="nav-text">启动图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable"><span class="nav-number">4.</span> <span class="nav-text">Variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fetch"><span class="nav-number">5.</span> <span class="nav-text">Fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feed"><span class="nav-number">6.</span> <span class="nav-text">Feed</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1064,6 +606,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
