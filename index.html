@@ -228,138 +228,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/信息熵/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/08/信息熵/" itemprop="url">信息熵</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-08T17:21:00+08:00">
-                2018-04-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="与信息熵相关的一些关键词"><a href="#与信息熵相关的一些关键词" class="headerlink" title="与信息熵相关的一些关键词"></a>与信息熵相关的一些关键词</h2><p>本文仅从一个小的方面解释了信息熵,如果您需要更多的了解,可以了解一下一下这些关键词</p>
-<ul>
-<li>哈夫曼编码(Huffman Coding)/哈夫曼树</li>
-</ul>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>熵(entropy)最早来源于热力学,用来描述一个热力学系统的混乱程度,熵的度量是能量退化的指标,1948年Claode Shannon在他的论文”A Mathematical Theory of Communication” 提出了信息熵(informaiton entropy) 的概念,信息熵被定义为一个随机数据产生的信息量的平均值.</p>
-<p>Shannon 定义的数据通信系统基本模型包括三个部分:数据源,传输信道,以及接收者.Shannon定义了一个”信息传输的基本问题”:接收者如何通过他收到的信息确定这个信息是数据源通过传输信道发送过来的.而信息熵,正好就表示了数据源发送信息的最短的无损平均编码长度.只要数据源的信息熵小于信道容量,那么我们可以保证这个信息可以可靠地传输到接收者那里(至少理论上来说是这样的)</p>
-<p>上面的介绍或许您看的云里雾里的,但是没关系,我们接下里会有更详细的说明</p>
-<h2 id="从信息到信息熵"><a href="#从信息到信息熵" class="headerlink" title="从信息到信息熵"></a>从信息到信息熵</h2><p>首先,信息是什么?信息是我们一直在讨论的东西,我们说继蒸汽时代,电气时代后,我们进入了信息时代.Shannon在他的论文”A Mathematical Theory of Communication”指出:<strong> 信息是用来消除随机不确定性的东西. </strong> 随后他定义了信息熵来解决信息的度量问题.那为什么有的事情包含的信息量大,有的事情包含的信息量小.一个事件X内部的不确定性,假定为U(Uncertainty),为了消除这个不确定性,唯一的办法是引入信息I(informaiton),I 会减少或者消除事件X 的不确定性:<br><strong>U’ = U - I</strong><br>这里我的理解是我们引入的信息I ,我们仅仅关注与X 相关的信息,所以I &lt;= U,然后我们引入更规范的写法,用信息熵来代表不确定性,新的公式为:<br><strong>H(X)’ = H(X) - I(X)</strong><br>网络上很多关于信息熵的例子都存在某种程度上的错误,一个比较常见的错误就是没有把信息熵与具体的事件X联系起来,所以有时候细细思考会发现里面的不妥当.在这里我举一个具体的例子:<br>假设<br>$f(x)=ax+b$</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Entropy_(information_theory)</a></li>
-<li>Shannon C E. A mathematical theory of communication[J]. Bell System Technical Journal, 1948, 27(4):379-423.</li>
-<li>数学之美-吴军</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/29/tensorflow流程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -770,7 +638,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
